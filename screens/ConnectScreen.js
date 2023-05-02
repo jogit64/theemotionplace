@@ -23,7 +23,7 @@ const ConnectScreen = ({ navigation }) => {
       />
       <TouchableOpacity
         style={LoginScreenStyles.button}
-        onPress={() => console.log("Handle registration logic here")}
+        onPress={() => console.log("Handle connexion logic here")}
       >
         <Text style={LoginScreenStyles.buttonText}>Se connecter</Text>
       </TouchableOpacity>
