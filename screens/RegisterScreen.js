@@ -2,13 +2,25 @@ import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, Alert } from "react-native";
 import LoginScreenStyles from "./LoginScreenStyles";
 
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
 const RegisterScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  //   const handleRegister = async () => {
+  //     try {
+  //       await firebase.auth().createUserWithEmailAndPassword(email, password);
+  //       navigation.navigate("Home");
+  //     } catch (error) {
+  //       Alert.alert("Erreur", error.message);
+  //     }
+  //   };
+
   const handleRegister = async () => {
     try {
-      await firebase.auth().createUserWithEmailAndPassword(email, password);
+      const auth = getAuth();
+      await createUserWithEmailAndPassword(auth, email, password);
       navigation.navigate("Home");
     } catch (error) {
       Alert.alert("Erreur", error.message);
