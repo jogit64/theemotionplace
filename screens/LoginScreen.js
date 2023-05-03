@@ -1,12 +1,18 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Image } from "react-native";
 import LoginScreenStyles from "./LoginScreenStyles";
 
 const LoginScreen = ({ navigation }) => {
   return (
     <View style={LoginScreenStyles.container}>
-      <Text style={LoginScreenStyles.title}>The Emotion Place</Text>
       <Text style={LoginScreenStyles.sstitle}>Bienvenue !</Text>
+      <Text style={LoginScreenStyles.title}>The Emotion Place</Text>
+
+      <Image
+        source={require("../assets/profil.png")}
+        style={LoginScreenStyles.logo}
+      />
+
       <TouchableOpacity
         style={LoginScreenStyles.button}
         onPress={() => navigation.navigate("Connect")}

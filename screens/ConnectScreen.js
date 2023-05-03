@@ -1,7 +1,14 @@
 //ConnectScreen
 
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, Alert } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  Alert,
+  Image,
+} from "react-native";
 import LoginScreenStyles from "./LoginScreenStyles";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
@@ -32,6 +39,10 @@ const ConnectScreen = ({ navigation }) => {
   return (
     <View style={LoginScreenStyles.container}>
       <Text style={LoginScreenStyles.title}>Connectez-vous</Text>
+      <Image
+        source={require("../assets/profil.png")}
+        style={LoginScreenStyles.logo}
+      />
       <TextInput
         style={LoginScreenStyles.input}
         placeholder="Email"

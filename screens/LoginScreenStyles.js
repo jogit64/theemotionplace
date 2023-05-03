@@ -24,13 +24,20 @@ const LoginScreenStyles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 10,
     borderRadius: 5,
-    width: 200,
+    width: 235,
   },
   buttonText: {
     color: "#ffffff",
     fontSize: 16,
     fontWeight: "bold",
     textAlign: "center",
+  },
+  logo: {
+    width: 125,
+    height: 125,
+    resizeMode: "contain",
+    marginBottom: 50,
+    marginTop: 50,
   },
 
   input: {
@@ -42,6 +49,7 @@ const LoginScreenStyles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 10,
     marginBottom: 10,
+    width: 235,
   },
 });
 
