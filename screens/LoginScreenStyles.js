@@ -12,6 +12,8 @@ const LoginScreenStyles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 20,
+    marginBottom: 10,
+    fontFamily: "LuckiestGuy",
   },
   sstitle: {
     color: "#ffffff",

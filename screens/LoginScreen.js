@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import LoginScreenStyles from "./LoginScreenStyles";
+import * as Font from "expo-font";
 
 const LoginScreen = ({ navigation }) => {
+  const [fontsLoaded, setFontsLoaded] = useState(false);
+
+  const loadFonts = async () => {
+    console.log("Starting font loading...");
+    try {
+      await Font.loadAsync({
+        LuckiestGuy: require("../assets/fonts/LuckiestGuy-Regular.ttf"),
+      });
+      console.log("Font loaded successfully!");
+      setFontsLoaded(true);
+    } catch (error) {
+      console.log("Error loading font:", error);
+    }
+  };
+
+  useEffect(() => {
+    loadFonts();
+  }, []);
+
+  if (!fontsLoaded) {
+    return <Text>Loading...</Text>;
+  }
+
   return (
     <View style={LoginScreenStyles.container}>
       <Text style={LoginScreenStyles.sstitle}>Bienvenue !</Text>
